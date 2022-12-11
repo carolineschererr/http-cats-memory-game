@@ -3,26 +3,18 @@ const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
 const catCards = [
-    '0',
-    '100',
-    '101',
-    '102',
     '200',
     '201',
-    '202',
-    '203',
     '204',
-    '206',
-    '207',
-    '300',
-    '301',
-    '302',
-    '303',
     '304',
-    '305',
-    '307',
-    '308',
-    '400'
+    '400',
+    '401',
+    '403',
+    '404',
+    '409',
+    '410',
+    '500',
+    '503',
 ];
 
 const createElement = (tag, className) => {
@@ -35,11 +27,11 @@ let firstCard = '';
 let secondCard = '';
 
 const checkEndGame = () => {
-    const disabledCard = document.querySelectorAll('.disabled-card'); //procurando cartas desabilitadas
+    const disabledCards = document.querySelectorAll('.disabled-card'); //procurando cartas desabilitadas
 
-    if(disabledCards.length === 40){
+    if(disabledCards.length === 24){ //quando chega em n*2, acabam as cartas e encerra o jogo
         clearInterval(this.loop);
-        alert(`Parabéns, ${spanPlayer.innerHTML} Você encontrou todos gatos HTTP em ${timer.innerHTML} segundos!`);
+        alert(`Parabéns, ${spanPlayer.innerHTML}! Você encontrou todos gatos HTTP em ${timer.innerHTML} segundos!`);
     }
 }
 
@@ -77,7 +69,7 @@ const revealCard = ({ target }) => {
 
     if(firstCard === '') {
         target.parentNode.classList.add('reveal-card'); //mostra a carta
-        firstCard = target.parentNode; // armazena na variavel firstCard
+        firstCard = target.parentNode; //armazena na variavel firstCard
     } else if(secondCard === '') {
         target.parentNode.classList.add('reveal-card');
         secondCard = target.parentNode;
@@ -118,7 +110,7 @@ const loadGame = () => {
 const startTimer = () => {
 
     this.loop = setInterval(() => {
-        const currentTime = Number(timer.innerHTML); // metodo Number() esta aqui pq timer é uma string. precisa converter
+        const currentTime = +timer.innerHTML; // metodo Number() esta aqui pq timer é uma string. precisa converter
         timer.innerHTML = currentTime + 1;
     }, 1000);
 }
