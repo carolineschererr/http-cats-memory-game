@@ -31,3 +31,9 @@ Teste 5 – Checar se cartas são iguais
 	Saída esperada:
 	- se forem diferentes, exibem gato em dúvida
 	- se forem iguais, congelam em preto e branco
+
+Teste 6 – Exibe caixa de diálogo no fim do jogo
+	Entrada:
+	- todas cartas flipadas
+	Saída esperada:
+	- caixa de diálogo com o tempo de jogo
