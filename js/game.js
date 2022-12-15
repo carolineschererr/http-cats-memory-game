@@ -29,7 +29,7 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card'); //procurando cartas desabilitadas
 
-    if(disabledCards.length === 24){ //quando chega em n*2, acabam as cartas e encerra o jogo
+    if(disabledCards.length === 24){ //quando chega em catCards*2, acabam as cartas e encerra o jogo
         clearInterval(this.loop);
         alert(`Parabéns, ${spanPlayer.innerHTML}! Você encontrou todos gatos HTTP em ${timer.innerHTML} segundos!`);
     }
@@ -109,7 +109,7 @@ const loadGame = () => {
 
 const startTimer = () => {
 
-    this.loop = setInterval(() => {
+    loop = setInterval(() => {
         const currentTime = +timer.innerHTML; // metodo Number() deveria estar aqui pq timer é uma string. precisa converter
         timer.innerHTML = currentTime + 1;
     }, 1000);
