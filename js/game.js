@@ -110,7 +110,7 @@ const loadGame = () => {
 const startTimer = () => {
 
     this.loop = setInterval(() => {
-        const currentTime = +timer.innerHTML; // metodo Number() esta aqui pq timer é uma string. precisa converter
+        const currentTime = +timer.innerHTML; // metodo Number() deveria estar aqui pq timer é uma string. precisa converter
         timer.innerHTML = currentTime + 1;
     }, 1000);
 }
